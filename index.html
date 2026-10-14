@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>FOLLICLE — Hair Care Comparison, Discovery & Review Platform</title>
+  <meta name="description" content="Discover your hair type, compare formulas, explore sulfate-free botanical ingredients, and build your personalized hair ritual with FOLLICLE.">
+  
+  <!-- CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  
+  <!-- Shared Style -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+          <!-- MOBILE MENU DRAWER -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="navbar-brand-wrapper">
+        <span class="brand-dot"></span> FOLLICLE
+      </a>
+      <button class="nav-icon-btn" id="mobileMenuClose"><i class="bi bi-x-lg"></i></button>
+    </div>
+    
+    <div class="mobile-nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html" class="">Shop</a>
+      <a href="compare.html" class="">Compare</a>
+      <a href="hair-quiz.html" class="">Hair Quiz</a>
+      <a href="reviews.html" class="">Reviews</a>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <div class="d-flex align-items-center justify-content-center gap-4">
+        <a href="shop.html" class="nav-icon-btn" title="Search"><i class="bi bi-search fs-5"></i></a>
+        <a href="dashboard.html" class="nav-icon-btn" title="Dashboard Account"><i class="bi bi-person fs-5"></i></a>
+        <a href="shop.html" class="nav-icon-btn position-relative" title="Cart">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-count-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="navbar-follicle">
+    <div class="container-custom d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-wrapper">
+        <span class="brand-dot"></span> FOLLICLE
+      </a>
+      
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <a href="index.html" class="nav-link-follicle active">Home</a>
+        <a href="shop.html" class="nav-link-follicle">Shop</a>
+        <a href="compare.html" class="nav-link-follicle">Compare</a>
+        <a href="hair-quiz.html" class="nav-link-follicle">Hair Quiz</a>
+        <a href="reviews.html" class="nav-link-follicle">Reviews</a>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="shop.html" class="nav-icon-btn d-none d-sm-flex" title="Search"><i class="bi bi-search"></i></a>
+        <a href="dashboard.html" class="nav-icon-btn d-none d-sm-flex" title="Account"><i class="bi bi-person"></i></a>
+        <a href="shop.html" class="nav-icon-btn position-relative" title="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-count-badge">0</span>
+        </a>
+        <button class="nav-icon-btn d-lg-none ms-2" id="mobileMenuToggle">
+          <i class="bi bi-list fs-3"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+
+    
+
+  <!-- 1. SIGNATURE BOTANICAL ORBIT HERO -->
+  <section class="hero-section">
+    <div class="container-custom">
+      <div class="hero-grid">
+        
+        <!-- Left Content -->
+        <div class="hero-text-content">
+          <div class="hero-eyebrow">
+            <i class="bi bi-flower1"></i> THE HAIR CARE DISCOVERY STUDIO
+          </div>
+          <h1 class="hero-title">
+            Good Hair Days Start With <span class="highlight-green">Knowing Your Hair.</span>
+          </h1>
+          <p class="hero-description">
+            Discover the right ingredients, compare formulas, understand your hair type, and build a botanical routine that works for you.
+          </p>
+          <div class="hero-cta-group">
+            <a href="hair-quiz.html" class="btn-follicle-primary">
+              Find My Hair Routine <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="shop.html" class="btn-follicle-secondary">
+              Explore Hair Care
+            </a>
+          </div>
+          <div class="credibility-row">
+            <div class="credibility-item">
+              <i class="bi bi-check-circle-fill text-success"></i> Hair-Type Discovery
+            </div>
+            <div class="credibility-item">
+              <i class="bi bi-check-circle-fill text-success"></i> Ingredient-Aware
+            </div>
+            <div class="credibility-item">
+              <i class="bi bi-check-circle-fill text-success"></i> Community Reviews
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual & Botanical Orbit -->
+        <div class="hero-visual-wrapper">
+          <!-- Orbit Decorative Circles -->
+          <div class="orbit-circle orbit-circle--sage"></div>
+          <div class="orbit-circle orbit-circle--peach"></div>
+          <div class="orbit-circle orbit-circle--lilac"></div>
+          <div class="orbit-circle orbit-circle--butter"></div>
+          <div class="orbit-circle orbit-circle--halo"></div>
+          <div class="orbit-circle orbit-circle--dot"></div>
+
+          <!-- Layered Product & Botanical Photos -->
+          <div class="hero-main-img-card">
+            <img src="assets/images/28.jpg" alt="FOLLICLE Botanical Hair Care Campaign">
+          </div>
+
+          <div class="hero-sub-img-circle">
+            <img src="assets/images/14.jpg" alt="Botanical Silk Shampoo Formula">
+          </div>
+
+          <div class="hero-tag-badge">
+            <i class="bi bi-stars"></i> Your Hair, Understood
+          </div>
+
+          
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HAIR TYPE DISCOVERY SECTION -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-tag badge-butter mb-2">TEXTURE DIAGNOSTICS</span>
+        <h2>Every Hair Type Has Its Own Language.</h2>
+        <p>Explore customized routines engineered specifically for your natural hair pattern.</p>
+      </div>
+
+      <div class="hair-type-grid">
+        <div class="hair-type-card">
+          <div class="hair-type-img-wrapper">
+            <img src="assets/images/1.jpg" alt="Straight Hair Care">
+          </div>
+          <div class="hair-type-body">
+            <h3 class="hair-type-title">Type 1 — Straight</h3>
+            <p class="hair-type-desc">Weightless hydration formulas that cleanse scalp oils while adding natural volume.</p>
+            <a href="shop.html?hairType=Straight" class="fw-bold">Discover Routine <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="hair-type-card">
+          <div class="hair-type-img-wrapper">
+            <img src="assets/images/2.jpg" alt="Wavy Hair Care">
+          </div>
+          <div class="hair-type-body">
+            <h3 class="hair-type-title">Type 2 — Wavy</h3>
+            <p class="hair-type-desc">Light moisture balances to enhance natural bend, tame frizz, and retain wave bounce.</p>
+            <a href="shop.html?hairType=Wavy" class="fw-bold">Discover Routine <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="hair-type-card">
+          <div class="hair-type-img-wrapper">
+            <img src="assets/images/7.jpg" alt="Curly Hair Care">
+          </div>
+          <div class="hair-type-body">
+            <h3 class="hair-type-title">Type 3 — Curly</h3>
+            <p class="hair-type-desc">Rich humectants and lipid lock-in treatments for defined, springy, hydrated curls.</p>
+            <a href="shop.html?hairType=Curly" class="fw-bold">Discover Routine <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="hair-type-card">
+          <div class="hair-type-img-wrapper">
+            <img src="assets/images/9.jpg" alt="Coily Hair Care">
+          </div>
+          <div class="hair-type-body">
+            <h3 class="hair-type-title">Type 4 — Coily</h3>
+            <p class="hair-type-desc">Deep botanical butters and scalp nourishment to preserve curl elasticity and strength.</p>
+            <a href="shop.html?hairType=Coily" class="fw-bold">Discover Routine <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HAIR QUIZ PROMO -->
+  <section class="section-padding position-relative" style="background-color: #F1EBE1;">
+    <div class="container-custom">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <img src="assets/images/12.jpg" alt="Hair Assessment Quiz" class="img-fluid rounded-4 shadow-md">
+            <div class="orbit-circle orbit-circle--lilac" style="top:-30px; left:-30px;"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge-tag badge-lilac mb-3">PERSONAL DIAGNOSTIC</span>
+          <h2 class="mb-3">Let's Understand Your Hair.</h2>
+          <p class="mb-4">
+            Take our 2-minute diagnostic questionnaire to identify your scalp needs, moisture preferences, and ingredient sensitivities.
+          </p>
+          <a href="hair-quiz.html" class="btn-follicle-primary">
+            Start Hair Quiz <i class="bi bi-magic"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PRODUCT DISCOVERY GRID -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+        <div>
+          <span class="badge-tag badge-sage mb-2">FORMULA DISCOVERY</span>
+          <h2>Your Routine, Thoughtfully Curated.</h2>
+        </div>
+        <a href="shop.html" class="btn-follicle-secondary">View All Products</a>
+      </div>
+
+      <div class="product-grid" id="productCatalogGrid">
+        <!-- Rendered via main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. INGREDIENT SPOTLIGHT -->
+  <section class="section-padding bg-white" id="ingredientSpotlightSection">
+    <div class="container-custom">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-tag badge-butter mb-3">TRANSPARENT BEAUTY SCIENCE</span>
+        <h2 class="mb-3">Know What Goes Into Your Routine.</h2>
+        <p class="text-muted">Explore the clean, cold-pressed plant actives and bio-botanicals engineered to restore scalp vitality and seal fiber cuticles.</p>
+      </div>
+
+      <div class="ingredient-grid" id="ingredientsGrid">
+        <!-- Card 1: Rosemary Oil -->
+        <div class="ingredient-card">
+          <div class="ingredient-card-top">
+            <span class="badge-tag badge-sage">SCALP &amp; ROOT TONIC</span>
+            <span class="ingredient-origin-pill"><i class="bi bi-geo-alt"></i> Mediterranean</span>
+          </div>
+          <div class="ingredient-img-circle">
+            <img src="assets/images/22.jpg" alt="Organic Rosemary Extract &amp; Scalp Oil">
+          </div>
+          <h3 class="ingredient-name">Organic Rosemary Oil</h3>
+          <span class="ingredient-latin">Rosmarinus Officinalis</span>
+          <p class="ingredient-desc">Stimulates micro-circulation around follicles, strengthens the hair bulb anchor, and rebalances scalp sebum without stripping.</p>
+          <div class="ingredient-pills">
+            <span class="ingredient-pill"><i class="bi bi-activity"></i> Circulation</span>
+            <span class="ingredient-pill"><i class="bi bi-shield-check"></i> Root Strength</span>
+          </div>
+          <div class="ingredient-footer">
+            <span class="found-count"><i class="bi bi-stars text-warning"></i> 3 Formulas</span>
+            <a href="shop.html?search=Rosemary">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2: Argan Oil -->
+        <div class="ingredient-card">
+          <div class="ingredient-card-top">
+            <span class="badge-tag badge-butter">LIPID CUTICLE SEAL</span>
+            <span class="ingredient-origin-pill"><i class="bi bi-geo-alt"></i> Morocco</span>
+          </div>
+          <div class="ingredient-img-circle">
+            <img src="assets/images/24.jpg" alt="Cold-Pressed Moroccan Argan Oil">
+          </div>
+          <h3 class="ingredient-name">Cold-Pressed Argan Oil</h3>
+          <span class="ingredient-latin">Argania Spinosa Kernel</span>
+          <p class="ingredient-desc">Rich in Vitamin E and essential fatty acids to fill microscopic cuticle fissures, smooth wave patterns, and deliver luminous glass shine.</p>
+          <div class="ingredient-pills">
+            <span class="ingredient-pill"><i class="bi bi-droplet-half"></i> Cuticle Seal</span>
+            <span class="ingredient-pill"><i class="bi bi-sun"></i> Heat Guard</span>
+          </div>
+          <div class="ingredient-footer">
+            <span class="found-count"><i class="bi bi-stars text-warning"></i> 4 Formulas</span>
+            <a href="shop.html?search=Argan">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3: Aloe Vera -->
+        <div class="ingredient-card">
+          <div class="ingredient-card-top">
+            <span class="badge-tag badge-peach">WEIGHTLESS HYDRATION</span>
+            <span class="ingredient-origin-pill"><i class="bi bi-geo-alt"></i> Tropical Bio-Farms</span>
+          </div>
+          <div class="ingredient-img-circle">
+            <img src="assets/images/25.jpg" alt="Bio-Active Aloe Vera Concentrate">
+          </div>
+          <h3 class="ingredient-name">Bio-Active Aloe Vera</h3>
+          <span class="ingredient-latin">Aloe Barbadensis Leaf</span>
+          <p class="ingredient-desc">Enzyme-rich humectant that mirrors natural scalp moisture, calming sensitive irritation while providing weightless, bouncy hydration.</p>
+          <div class="ingredient-pills">
+            <span class="ingredient-pill"><i class="bi bi-droplet"></i> Pure Moisture</span>
+            <span class="ingredient-pill"><i class="bi bi-heart-pulse"></i> pH Balance</span>
+          </div>
+          <div class="ingredient-footer">
+            <span class="found-count"><i class="bi bi-stars text-warning"></i> 3 Formulas</span>
+            <a href="shop.html?search=Aloe">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4: Virgin Coconut Lipids -->
+        <div class="ingredient-card">
+          <div class="ingredient-card-top">
+            <span class="badge-tag badge-lilac">CURL MEMORY &amp; DEFENSE</span>
+            <span class="ingredient-origin-pill"><i class="bi bi-geo-alt"></i> Sustainable Island Crops</span>
+          </div>
+          <div class="ingredient-img-circle">
+            <img src="assets/images/23.jpg" alt="Virgin Coconut Lipids">
+          </div>
+          <h3 class="ingredient-name">Virgin Coconut Lipids</h3>
+          <span class="ingredient-latin">Cocos Nucifera Lipids</span>
+          <p class="ingredient-desc">Penetrates the inner hair shaft to minimize protein loss, prevent weather-induced frizz, and protect natural curl definition all day.</p>
+          <div class="ingredient-pills">
+            <span class="ingredient-pill"><i class="bi bi-slash-circle"></i> Anti-Frizz</span>
+            <span class="ingredient-pill"><i class="bi bi-arrow-repeat"></i> Elasticity</span>
+          </div>
+          <div class="ingredient-footer">
+            <span class="found-count"><i class="bi bi-stars text-warning"></i> 3 Formulas</span>
+            <a href="shop.html?search=Coconut">Explore <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingredient Spotlight Interactive Banner -->
+      <div class="ingredient-section-banner">
+        <div class="banner-text">
+          <h4>Formula Transparency Guaranteed</h4>
+          <p>Every FOLLICLE product discloses 100% of its bio-active ingredients, botanical percentages, and ethical sourcing origins.</p>
+        </div>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <a href="shop.html" class="btn-follicle-primary"><i class="bi bi-flower1"></i> Explore Botanical Formulas</a>
+          <a href="compare.html" class="btn-follicle-secondary"><i class="bi bi-arrow-left-right"></i> Compare Ingredients</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PRODUCT COMPARISON PREVIEW -->
+  <section class="section-padding" style="background-color: var(--color-paper);">
+    <div class="container-custom">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="badge-tag badge-peach mb-2">COMPARISON MATRIX</span>
+          <h2>Two Formulas. One Better-Informed Choice.</h2>
+          <p>
+            Side-by-side ingredient breakdowns, sulfate-free verifications, and hair type suitability scores to help you choose with confidence.
+          </p>
+          <a href="compare.html" class="btn-follicle-primary mt-3">
+            Open Product Matrix <i class="bi bi-arrow-left-right"></i>
+          </a>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="product-card">
+                <div class="product-img-container">
+                  <div class="product-badges">
+                    <span class="badge-tag badge-sulfate-free">SULFATE-FREE</span>
+                  </div>
+                  <div class="product-actions-floating">
+                    <button class="btn-compare-icon" title="Compare Formula" onclick="toggleCompareProduct('prod-1', this)">
+                      <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                  </div>
+                  <a href="shop.html" class="d-flex align-items-center justify-content-center h-100 w-100 text-decoration-none">
+                    <img src="assets/images/14.jpg" alt="Botanical Silk Shampoo">
+                  </a>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-brand">FOLLICLE Science</div>
+                  <h3 class="product-title"><a href="shop.html">Botanical Silk Shampoo</a></h3>
+                  <div class="product-rating">
+                    <i class="bi bi-star-fill star-icon"></i>
+                    <span class="rating-score">4.9</span>
+                    <span class="rating-count">(128)</span>
+                  </div>
+                  <div class="product-ingredients-snippet">Rosemary Extract, Silk Amino Acids, Plant Squalane</div>
+                  <div class="product-card-divider"></div>
+                  <div class="product-card-footer">
+                    <span class="product-price">$34.00</span>
+                    <button class="btn-add-cart-pill" onclick="addToCart('prod-1', this)">
+                      <i class="bi bi-bag"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="product-card">
+                <div class="product-img-container">
+                  <div class="product-badges">
+                    <span class="badge-tag badge-sulfate-free">SULFATE-FREE</span>
+                  </div>
+                  <div class="product-actions-floating">
+                    <button class="btn-compare-icon" title="Compare Formula" onclick="toggleCompareProduct('prod-2', this)">
+                      <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                  </div>
+                  <a href="shop.html" class="d-flex align-items-center justify-content-center h-100 w-100 text-decoration-none">
+                    <img src="assets/images/15.jpg" alt="Nourishing Lipid Conditioner">
+                  </a>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-brand">FOLLICLE Science</div>
+                  <h3 class="product-title"><a href="shop.html">Nourishing Lipid Conditioner</a></h3>
+                  <div class="product-rating">
+                    <i class="bi bi-star-fill star-icon"></i>
+                    <span class="rating-score">4.8</span>
+                    <span class="rating-count">(95)</span>
+                  </div>
+                  <div class="product-ingredients-snippet">Argan Oil, Shea Lipids, Hydrolyzed Wheat Protein</div>
+                  <div class="product-card-divider"></div>
+                  <div class="product-card-footer">
+                    <span class="product-price">$36.00</span>
+                    <button class="btn-add-cart-pill" onclick="addToCart('prod-2', this)">
+                      <i class="bi bi-bag"></i> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CUSTOMER REVIEW GALLERY -->
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-5">
+        <span class="badge-tag badge-lilac mb-2">VERIFIED STYLE RESULTS</span>
+        <h2>Real Routines. Personal Results.</h2>
+        <p>See how our community uses FOLLICLE to transform their hair journey.</p>
+      </div>
+
+      <div class="row g-4" id="reviewsGrid">
+        <!-- Rendered via main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SUBSCRIPTION FEATURE -->
+  <section class="section-padding" style="background-color: var(--color-cream);">
+    <div class="container-custom">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-tag badge-sage mb-2">AUTOMATED RITUAL</span>
+        <h2>Your Essentials, Right on Time.</h2>
+        <p>Never run out of your essential botanical hair care. Pause or modify your delivery frequency anytime.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-4 d-flex">
+          <div class="subscription-card">
+            <div class="subscription-badge-wrapper"></div>
+            <h4>Essential Cleanse Kit</h4>
+            <div class="subscription-price">$58 <small>/ month</small></div>
+            <p class="small text-muted mb-4">Shampoo + Conditioner ritual box tailored to your texture.</p>
+            <a href="shop.html" class="btn-follicle-secondary w-100 mt-auto">Explore Ritual</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+          <div class="subscription-card popular">
+            <div class="subscription-badge-wrapper">
+              <span class="badge-tag badge-forest text-white">MOST POPULAR</span>
+            </div>
+            <h4>Complete Routine Box</h4>
+            <div class="subscription-price">$88 <small>/ bundle</small></div>
+            <p class="small text-muted mb-4">Shampoo, Conditioner, Deep Mask & Scalp Elixir full routine.</p>
+            <a href="shop.html" class="btn-follicle-primary w-100 mt-auto">Explore Ritual</a>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+          <div class="subscription-card">
+            <div class="subscription-badge-wrapper"></div>
+            <h4>Custom Scalp Ritual</h4>
+            <div class="subscription-price">$64 <small>/ bundle</small></div>
+            <p class="small text-muted mb-4">Targeted scalp detox serums & clarifying scrubs.</p>
+            <a href="shop.html" class="btn-follicle-secondary w-100 mt-auto">Explore Ritual</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FINAL CTA -->
+  <section class="section-padding bg-white border-top">
+    <div class="container-custom text-center max-w-700 mx-auto">
+      <h2 class="mb-3">Make Your Routine Make Sense.</h2>
+      <p class="mb-4">Start with your hair type, discover ingredients, and compare products with confidence.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="hair-quiz.html" class="btn-follicle-primary">Take the Hair Quiz</a>
+        <a href="shop.html" class="btn-follicle-secondary">Explore Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4" style="background-color: var(--color-ink); color: var(--color-cream);">
+    <div class="container-custom">
+      <div class="row g-4 pb-5 border-bottom border-secondary">
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-wrapper text-white mb-3">
+            <span class="brand-dot"></span> FOLLICLE
+          </a>
+          <p class="small mb-3" style="color: #D5DACF; line-height: 1.6;">Your Hair. Your Science. Your Ritual. FOLLICLE is a premium hair-care discovery and product comparison platform.</p>
+          <div class="d-flex align-items-center gap-2">
+            <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="social-icon-btn" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="social-icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white mb-3 fw-bold">Discovery</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="shop.html" class="footer-link">Shop Formulas</a></li>
+            <li><a href="hair-quiz.html" class="footer-link">Hair Diagnostic Quiz</a></li>
+            <li><a href="compare.html" class="footer-link">Product Comparison</a></li>
+            <li><a href="reviews.html" class="footer-link">Verified Reviews</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white mb-3 fw-bold">Studio Portal</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="dashboard.html" class="footer-link">Client Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white mb-3 fw-bold">Company</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="contact.html" class="footer-link">Contact Studio</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-4 text-center small" style="color: #B5BCAE;">
+        &copy; 2026 FOLLICLE Beauty Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

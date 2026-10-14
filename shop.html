@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>Shop Botanical Hair Care — FOLLICLE Studio</title>
+  <meta name="description" content="Browse FOLLICLE's curated collection of sulfate-free shampoos, conditioners, scalp oils, and deep repair masks. Filter by hair type and ingredient concerns.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+          <!-- MOBILE MENU DRAWER -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="navbar-brand-wrapper">
+        <span class="brand-dot"></span> FOLLICLE
+      </a>
+      <button class="nav-icon-btn" id="mobileMenuClose"><i class="bi bi-x-lg"></i></button>
+    </div>
+    
+    <div class="mobile-nav-links">
+      <a href="index.html" class="">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="compare.html" class="">Compare</a>
+      <a href="hair-quiz.html" class="">Hair Quiz</a>
+      <a href="reviews.html" class="">Reviews</a>
+    </div>
+
+    <div class="mobile-nav-footer">
+      <div class="d-flex align-items-center justify-content-center gap-4">
+        <a href="shop.html" class="nav-icon-btn" title="Search"><i class="bi bi-search fs-5"></i></a>
+        <a href="dashboard.html" class="nav-icon-btn" title="Dashboard Account"><i class="bi bi-person fs-5"></i></a>
+        <a href="shop.html" class="nav-icon-btn position-relative" title="Cart">
+          <i class="bi bi-bag fs-5"></i>
+          <span class="cart-count-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="navbar-follicle">
+    <div class="container-custom d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-wrapper">
+        <span class="brand-dot"></span> FOLLICLE
+      </a>
+      
+      <div class="d-none d-lg-flex align-items-center gap-2">
+        <a href="index.html" class="nav-link-follicle">Home</a>
+        <a href="shop.html" class="nav-link-follicle active">Shop</a>
+        <a href="compare.html" class="nav-link-follicle">Compare</a>
+        <a href="hair-quiz.html" class="nav-link-follicle">Hair Quiz</a>
+        <a href="reviews.html" class="nav-link-follicle">Reviews</a>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="shop.html" class="nav-icon-btn d-none d-sm-flex" title="Search"><i class="bi bi-search"></i></a>
+        <a href="dashboard.html" class="nav-icon-btn d-none d-sm-flex" title="Account"><i class="bi bi-person"></i></a>
+        <a href="shop.html" class="nav-icon-btn position-relative" title="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-count-badge">0</span>
+        </a>
+        <button class="nav-icon-btn d-lg-none ms-2" id="mobileMenuToggle">
+          <i class="bi bi-list fs-3"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  
+
+    
+
+  <!-- PAGE HEADER & BREADCRUMBS -->
+  <section class="py-5 shop-header-section" style="background: linear-gradient(180deg, #F9F7F2 0%, #F5F2EB 100%); border-bottom: 1px solid var(--color-border);">
+    <div class="container-custom">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html" class="text-muted text-decoration-none">Discovery</a></li>
+          <li class="breadcrumb-item active text-forest fw-semibold" aria-current="page">Curated Hair Formulas</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-8">
+          <span class="badge-tag badge-sage mb-2">BIO-BOTANICAL LAB FORMULATIONS</span>
+          <h1 class="mb-2">Hair Care Shop</h1>
+          <p class="mb-0 text-muted" style="max-width: 640px; font-size: 1.05rem;">
+            Discover clean, high-performance botanical hair care scientifically tailored to your hair type, scalp biome, and fiber texture. 100% sulfate-free, cruelty-free, and ethically formulated.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="hair-quiz.html" class="btn btn-follicle-secondary btn-follicle-sm">
+            <i class="bi bi-magic me-1"></i> Take Hair Diagnostic Quiz
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Filter Bar -->
+      <div class="shop-quick-filter-bar mt-4 pt-3 border-top">
+        <button class="quick-filter-chip active" data-category="all">
+          <i class="bi bi-grid me-1"></i> All Formulas
+        </button>
+        <button class="quick-filter-chip" data-category="sulfate-free">
+          <i class="bi bi-shield-check me-1 text-forest"></i> 100% Sulfate-Free
+        </button>
+        <button class="quick-filter-chip" data-category="Shampoo">
+          Shampoo
+        </button>
+        <button class="quick-filter-chip" data-category="Conditioner">
+          Conditioner
+        </button>
+        <button class="quick-filter-chip" data-category="Hair Masks">
+          Hair Masks
+        </button>
+        <button class="quick-filter-chip" data-category="Hair Oils">
+          Hair Oils & Serums
+        </button>
+        <button class="quick-filter-chip" data-category="Scalp Care">
+          Scalp Care
+        </button>
+        <button class="quick-filter-chip" data-category="Leave-in Treatments">
+          Leave-in Treatments
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOG CONTENT -->
+  <section class="section-padding" style="background-color: var(--color-cream); min-height: 80vh;">
+    <div class="container-custom">
+      <div class="row g-4">
+        
+        <!-- SIDEBAR FILTERS -->
+        <div class="col-lg-3">
+          <div class="p-4 rounded-4 bg-white border sticky-top shadow-sm" style="top: 86px; z-index: 10;">
+            <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+              <h5 class="font-heading mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-funnel text-forest"></i>
+                <span>Filter Formulas</span>
+              </h5>
+              <button class="btn btn-link btn-sm text-decoration-none text-muted p-0 small" id="sidebarResetBtn" title="Reset all filters">
+                Clear all
+              </button>
+            </div>
+
+            <!-- Search -->
+            <div class="mb-4">
+              <label class="form-label font-weight-bold small text-muted text-uppercase letter-spacing-1">Search Formula</label>
+              <div class="position-relative">
+                <input type="text" id="shopSearchInput" class="form-control" placeholder="Search by name, ingredient..." style="border-radius: 9999px; padding-left: 36px; padding-right: 32px; font-size: 0.88rem;">
+                <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted" style="left: 14px; font-size: 0.85rem;"></i>
+                <button type="button" id="shopSearchClear" class="btn btn-sm btn-link position-absolute top-50 translate-middle-y text-muted p-0" style="right: 12px; font-size: 0.85rem;" title="Clear search">
+                  <i class="bi bi-x-circle-fill"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Hair Type Filter -->
+            <div class="mb-4">
+              <label class="form-label font-weight-bold small text-muted text-uppercase letter-spacing-1">Hair Texture</label>
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-hairtype" type="checkbox" value="Straight" id="htStraight">
+                    <label class="form-check-label small" for="htStraight">Type 1 — Straight</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">3</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-hairtype" type="checkbox" value="Wavy" id="htWavy">
+                    <label class="form-check-label small" for="htWavy">Type 2 — Wavy</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">3</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-hairtype" type="checkbox" value="Curly" id="htCurly">
+                    <label class="form-check-label small" for="htCurly">Type 3 — Curly</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">4</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-hairtype" type="checkbox" value="Coily" id="htCoily">
+                    <label class="form-check-label small" for="htCoily">Type 4 — Coily</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">5</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Category -->
+            <div class="mb-4 pt-3 border-top">
+              <label class="form-label font-weight-bold small text-muted text-uppercase letter-spacing-1">Category</label>
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Shampoo" id="catShampoo">
+                    <label class="form-check-label small" for="catShampoo">Shampoo</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">1</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Conditioner" id="catCond">
+                    <label class="form-check-label small" for="catCond">Conditioner</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">1</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Hair Masks" id="catMask">
+                    <label class="form-check-label small" for="catMask">Hair Masks</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">3</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Hair Oils" id="catOil">
+                    <label class="form-check-label small" for="catOil">Hair Oils & Serums</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">4</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Scalp Care" id="catScalp">
+                    <label class="form-check-label small" for="catScalp">Scalp Care</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">3</span>
+                </div>
+                <div class="form-check d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input filter-input filter-category" type="checkbox" value="Leave-in Treatments" id="catLeaveIn">
+                    <label class="form-check-label small" for="catLeaveIn">Leave-in Treatments</label>
+                  </div>
+                  <span class="badge rounded-pill bg-light text-muted small fw-normal">3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hair Concerns -->
+            <div class="mb-4 pt-3 border-top">
+              <label class="form-label font-weight-bold small text-muted text-uppercase letter-spacing-1">Target Concern</label>
+              <div class="d-flex flex-column gap-2">
+                <div class="form-check">
+                  <input class="form-check-input filter-input filter-concern" type="checkbox" value="Dryness" id="conDry">
+                  <label class="form-check-label small" for="conDry">Dryness & Hydration</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input filter-concern" type="checkbox" value="Frizz" id="conFrizz">
+                  <label class="form-check-label small" for="conFrizz">Frizz Control & Smoothing</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input filter-concern" type="checkbox" value="Damaged Hair" id="conDamage">
+                  <label class="form-check-label small" for="conDamage">Bond Repair & Damage</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input filter-concern" type="checkbox" value="Scalp Care" id="conScalp">
+                  <label class="form-check-label small" for="conScalp">Scalp Balance & Detox</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input filter-input filter-concern" type="checkbox" value="Curl Definition" id="conCurl">
+                  <label class="form-check-label small" for="conCurl">Curl Pattern Clumping</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sulfate Free Toggle -->
+            <div class="pt-3 border-top">
+              <div class="form-check form-switch d-flex align-items-center justify-content-between p-0">
+                <label class="form-check-label font-weight-bold small text-forest" for="filterSulfateFree">
+                  <i class="bi bi-shield-check me-1"></i> 100% Sulfate-Free
+                </label>
+                <input class="form-check-input filter-input m-0" type="checkbox" id="filterSulfateFree" role="switch">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="col-lg-9">
+          <!-- Toolbar -->
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-3 p-3 bg-white rounded-4 border shadow-sm">
+            <span class="text-dark fw-medium small" id="resultsCount">Showing curated botanical formulas</span>
+            
+            <div class="d-flex align-items-center gap-3">
+              <!-- View Columns Toggle -->
+              <div class="d-none d-md-flex align-items-center gap-1 border-end pe-3">
+                <span class="small text-muted me-1">VIEW:</span>
+                <button class="btn-view-toggle active" id="viewCols3Btn" title="3 Columns (Comfortable View)">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                </button>
+                <button class="btn-view-toggle" id="viewCols4Btn" title="4 Columns (Compact View)">
+                  <i class="bi bi-grid-fill"></i>
+                </button>
+              </div>
+
+              <!-- Sort Dropdown -->
+              <div class="d-flex align-items-center gap-2">
+                <label class="small font-weight-bold text-muted text-nowrap">SORT:</label>
+                <select id="shopSortSelect" class="form-select form-select-sm" style="width: 170px; border-radius: 9999px;">
+                  <option value="featured">Featured Curated</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name-az">Formula: A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Filter Tags Container -->
+          <div class="active-filters-wrapper mb-3" id="activeFiltersContainer" style="display: none;"></div>
+
+          <!-- Dynamic Products Catalog Grid -->
+          <div class="product-grid" id="productCatalogGrid">
+            <!-- Rendered dynamically by main.js matching the exact snip design -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4" style="background-color: var(--color-ink); color: var(--color-cream);">
+    <div class="container-custom">
+      <div class="row g-4 pb-5 border-bottom border-secondary">
+        <div class="col-lg-4">
+          <a href="index.html" class="navbar-brand-wrapper text-white mb-3">
+            <span class="brand-dot"></span> FOLLICLE
+          </a>
+          <p class="small mb-3" style="color: #D5DACF; line-height: 1.6;">Your Hair. Your Science. Your Ritual. FOLLICLE is a premium hair-care discovery and product comparison platform.</p>
+          <div class="d-flex align-items-center gap-2">
+            <a href="#" class="social-icon-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" title="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="social-icon-btn" title="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="social-icon-btn" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-icon-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white mb-3 fw-bold">Discovery</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="shop.html" class="footer-link">Shop Formulas</a></li>
+            <li><a href="hair-quiz.html" class="footer-link">Hair Diagnostic Quiz</a></li>
+            <li><a href="compare.html" class="footer-link">Product Comparison</a></li>
+            <li><a href="reviews.html" class="footer-link">Verified Reviews</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white mb-3 fw-bold">Studio Portal</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="dashboard.html" class="footer-link">Client Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white mb-3 fw-bold">Company</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="contact.html" class="footer-link">Contact Studio</a></li>
+            <li><a href="admin.html" class="footer-link">Admin Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-4 text-center small" style="color: #B5BCAE;">
+        &copy; 2026 FOLLICLE Beauty Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
