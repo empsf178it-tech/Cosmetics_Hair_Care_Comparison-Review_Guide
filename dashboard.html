@@ -27,17 +27,17 @@
   <!-- FIXED LEFT SIDEBAR NAVIGATION FOR DASHBOARD -->
   <aside class="sidebar-follicle" id="sidebarFollicle">
     <div>
-      <a href="index.html" class="sidebar-brand">
+      <a href="index.html" class="sidebar-brand" title="Return to FOLLICLE Home">
         <span class="brand-dot"></span> FOLLICLE
       </a>
 
       <div class="sidebar-menu-list">
-        <a href="index.html" class="sidebar-link"><i class="bi bi-house"></i> Home</a>
-        <a href="dashboard.html" class="sidebar-link active"><i class="bi bi-speedometer2"></i> Dashboard</a>
-        <a href="shop.html" class="sidebar-link"><i class="bi bi-bag"></i> Shop</a>
-        <a href="compare.html" class="sidebar-link"><i class="bi bi-arrow-left-right"></i> Compare</a>
-        <a href="hair-quiz.html" class="sidebar-link"><i class="bi bi-magic"></i> Hair Quiz</a>
-        <a href="reviews.html" class="sidebar-link"><i class="bi bi-star"></i> Reviews</a>
+        <a href="#dashOverview" class="sidebar-link active"><i class="bi bi-grid-1x2"></i> Overview</a>
+        <a href="#dashRoutine" class="sidebar-link"><i class="bi bi-stars"></i> My Routine</a>
+        <a href="#dashReplenishments" class="sidebar-link"><i class="bi bi-box-seam"></i> Replenishments</a>
+        <a href="#dashSubscription" class="sidebar-link"><i class="bi bi-arrow-repeat"></i> Subscription</a>
+        <a href="#dashSaved" class="sidebar-link"><i class="bi bi-bookmark-heart"></i> Saved Matrix</a>
+        <a href="#dashShortcuts" class="sidebar-link"><i class="bi bi-lightning"></i> Quick Actions</a>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         <i class="bi bi-bag"></i> My Cart
         <span class="cart-count-badge ms-auto" style="position:static;">0</span>
       </a>
-      <a href="index.html" class="sidebar-link text-muted" onclick="localStorage.removeItem('follicle_user');"><i class="bi bi-box-arrow-right"></i> Return Home</a>
+      <a href="index.html" class="sidebar-link text-muted" title="Exit to Home"><i class="bi bi-box-arrow-right"></i> Return to Store</a>
     </div>
   </aside>
 
@@ -80,190 +80,453 @@
   <section class="section-padding">
     <div class="container-custom">
       
-      <!-- Top Metrics Row -->
-      <div class="row g-4 mb-5 dashboard-metrics-row">
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="text-muted small fw-bold">HAIR PATTERN</span>
-              <i class="bi bi-flower1 text-forest fs-4"></i>
+      <!-- 1. OVERVIEW VIEW (PAGE 1) -->
+      <div class="dashboard-view active" id="dashOverview">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h3 class="font-heading mb-1">Account &amp; Ritual Overview</h3>
+            <p class="text-muted small mb-0">High-level snapshot of your active hair diagnostics, subscription status, and quick metrics.</p>
+          </div>
+          <span class="badge-tag badge-forest">PROFILE SYNCED</span>
+        </div>
+
+        <!-- Top Metrics Row -->
+        <div class="row g-4 mb-4 dashboard-metrics-row">
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-muted small fw-bold">HAIR PATTERN</span>
+                <i class="bi bi-flower1 text-forest fs-4"></i>
+              </div>
+              <h4 class="mb-1 font-heading metric-title">Type 2B Wavy</h4>
+              <span class="badge-tag badge-lilac metric-badge">Scalp Balance 94%</span>
             </div>
-            <h4 class="mb-1 font-heading metric-title">Type 2B Wavy</h4>
-            <span class="badge-tag badge-lilac metric-badge">Scalp Balance 94%</span>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-muted small fw-bold">ACTIVE RITUAL</span>
+                <i class="bi bi-droplet-half text-forest fs-4"></i>
+              </div>
+              <h4 class="mb-1 font-heading metric-title">4 Formulas</h4>
+              <span class="badge-tag badge-butter metric-badge">Daily Hydration</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-muted small fw-bold">DELIVERY RITUAL</span>
+                <i class="bi bi-box-seam text-forest fs-4"></i>
+              </div>
+              <h4 class="mb-1 font-heading metric-title" id="dashSubStatus">Complete Box</h4>
+              <span class="badge-tag badge-sage metric-badge">Next Box: Nov 1st</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <span class="text-muted small fw-bold">SAVED FORMULAS</span>
+                <i class="bi bi-bookmark-heart text-forest fs-4"></i>
+              </div>
+              <h4 class="mb-1 font-heading metric-title">3 Formulas</h4>
+              <a href="#dashSaved" class="small text-forest fw-bold metric-badge d-inline-flex align-items-center dash-nav-trigger">View Matrix &rarr;</a>
+            </div>
           </div>
         </div>
 
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="text-muted small fw-bold">ACTIVE RITUAL</span>
-              <i class="bi bi-droplet-half text-forest fs-4"></i>
+        <!-- Overview Highlights Dual Card Row -->
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="font-heading mb-0"><i class="bi bi-stars text-forest me-2"></i> Current Botanical Regimen</h5>
+                <a href="#dashRoutine" class="btn btn-follicle-secondary btn-follicle-sm dash-nav-trigger">View Full Routine</a>
+              </div>
+              <p class="text-muted small mb-3">Customized for Type 2B Wave definition, strand elasticity, and sebum balance.</p>
+              <div class="d-flex flex-column gap-2">
+                <div class="p-3 rounded-3 bg-light border d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="assets/images/14.jpg" style="width:40px; height:40px; object-fit:contain;" class="rounded-2">
+                    <div>
+                      <div class="fw-bold small">Botanical Silk Shampoo</div>
+                      <small class="text-muted">Step 01 &bull; 2-3x weekly</small>
+                    </div>
+                  </div>
+                  <span class="badge-tag badge-sage">Active</span>
+                </div>
+                <div class="p-3 rounded-3 bg-light border d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="assets/images/15.jpg" style="width:40px; height:40px; object-fit:contain;" class="rounded-2">
+                    <div>
+                      <div class="fw-bold small">Nourishing Lipid Conditioner</div>
+                      <small class="text-muted">Step 02 &bull; Mid-lengths to ends</small>
+                    </div>
+                  </div>
+                  <span class="badge-tag badge-butter">Active</span>
+                </div>
+              </div>
             </div>
-            <h4 class="mb-1 font-heading metric-title">4 Formulas</h4>
-            <span class="badge-tag badge-butter metric-badge">Daily Hydration</span>
           </div>
-        </div>
 
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="text-muted small fw-bold">DELIVERY RITUAL</span>
-              <i class="bi bi-box-seam text-forest fs-4"></i>
+          <div class="col-lg-5">
+            <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="font-heading mb-0"><i class="bi bi-box-seam text-forest me-2"></i> Next Delivery</h5>
+                <span class="badge-tag badge-forest text-white">Active</span>
+              </div>
+              <p class="text-muted small mb-3">Monthly Ritual replenishment scheduled for automatic dispatch.</p>
+              <div class="p-3 bg-light rounded-3 mb-3 small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted">Next Billing:</span>
+                  <strong class="text-dark">Nov 1, 2026</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted">Box Tier:</span>
+                  <strong class="text-dark">Complete Routine (4 items)</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-muted">Subscriber Discount:</span>
+                  <strong class="text-forest">25% Saved</strong>
+                </div>
+              </div>
+              <a href="#dashSubscription" class="btn btn-follicle-secondary btn-follicle-sm w-100 dash-nav-trigger">Manage Subscription</a>
             </div>
-            <h4 class="mb-1 font-heading metric-title" id="dashSubStatus">Complete Box</h4>
-            <span class="badge-tag badge-sage metric-badge">Next Box: Nov 1st</span>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-4 border shine-hover h-100 shadow-sm metric-card">
-            <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="text-muted small fw-bold">SAVED FORMULAS</span>
-              <i class="bi bi-bookmark-heart text-forest fs-4"></i>
-            </div>
-            <h4 class="mb-1 font-heading metric-title">3 Formulas</h4>
-            <a href="compare.html" class="small text-forest fw-bold metric-badge d-inline-flex align-items-center">View Matrix &rarr;</a>
           </div>
         </div>
       </div>
 
-      <!-- Main Dashboard Grid -->
-      <div class="row g-4">
-        
-        <!-- Left Column: Active Hair Ritual Timeline -->
-        <div class="col-lg-8">
-          <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
-            <div class="dashboard-routine-header d-flex justify-content-between align-items-center mb-4">
-              <div>
-                <h4 class="font-heading mb-1"><i class="bi bi-stars text-forest me-2"></i> Your Customized Bio-Botanical Routine</h4>
-                <p class="small text-muted mb-0">Formulated specifically for Type 2B Wave definition and moisture retention.</p>
+      <!-- 2. MY ROUTINE VIEW (PAGE 2) -->
+      <div class="dashboard-view" id="dashRoutine" style="display: none;">
+        <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+          <div class="dashboard-routine-header d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <span class="badge-tag badge-sage mb-2">ACTIVE BIO-REGIMEN</span>
+              <h3 class="font-heading mb-1"><i class="bi bi-stars text-forest me-2"></i> Your Customized Bio-Botanical Routine</h3>
+              <p class="small text-muted mb-0">Formulated specifically for Type 2B Wave definition and moisture retention.</p>
+            </div>
+            <a href="hair-quiz.html" class="btn btn-follicle-secondary btn-follicle-sm"><i class="bi bi-magic me-1"></i> Update Diagnostic</a>
+          </div>
+
+          <!-- Ritual Steps Grid -->
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
+                <img src="assets/images/14.jpg" style="width:60px; height:60px; object-fit:contain;" class="rounded-2">
+                <div>
+                  <span class="badge-tag badge-sage mb-1">Step 01 &bull; Cleanse</span>
+                  <h6 class="mb-0 fw-bold fs-7">Botanical Silk Shampoo</h6>
+                  <small class="text-muted">Use 2-3x per week &bull; Gentle sulfate-free root wash</small>
+                </div>
               </div>
-              <a href="hair-quiz.html" class="btn btn-follicle-secondary btn-follicle-sm">Update Diagnostic</a>
             </div>
 
-            <!-- Ritual Steps Grid -->
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
-                  <img src="assets/images/14.jpg" style="width:54px; height:54px; object-fit:contain;" class="rounded-2">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
+                <img src="assets/images/15.jpg" style="width:60px; height:60px; object-fit:contain;" class="rounded-2">
+                <div>
+                  <span class="badge-tag badge-butter mb-1">Step 02 &bull; Condition</span>
+                  <h6 class="mb-0 fw-bold fs-7">Nourishing Lipid Conditioner</h6>
+                  <small class="text-muted">Apply mid-lengths to ends &bull; Leave 3 minutes</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
+                <img src="assets/images/17.jpg" style="width:60px; height:60px; object-fit:contain;" class="rounded-2">
+                <div>
+                  <span class="badge-tag badge-lilac mb-1">Step 03 &bull; Scalp Tonic</span>
+                  <h6 class="mb-0 fw-bold fs-7">Rosemary Scalp &amp; Elixir Oil</h6>
+                  <small class="text-muted">Massage 60s nightly into root zones</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
+                <img src="assets/images/38.jpg" style="width:60px; height:60px; object-fit:contain;" class="rounded-2">
+                <div>
+                  <span class="badge-tag badge-peach mb-1">Step 04 &bull; Define</span>
+                  <h6 class="mb-0 fw-bold fs-7">Hydra-Shield Curl Leave-In</h6>
+                  <small class="text-muted">Scrunch into damp hair &bull; Air dry or diffuse</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. REPLENISHMENTS VIEW (PAGE 3) -->
+      <div class="dashboard-view" id="dashReplenishments" style="display: none;">
+        <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <span class="badge-tag badge-butter mb-2">QUICK RESTOCK</span>
+              <h3 class="font-heading mb-1"><i class="bi bi-box-seam text-forest me-2"></i> Recommended Replenishments</h3>
+              <p class="small text-muted mb-0">Hand-picked formulas compatible with your Type 2B routine to replenish before you run out.</p>
+            </div>
+            <a href="shop.html" class="btn btn-follicle-secondary btn-follicle-sm">Browse Full Shop</a>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
+                <img src="assets/images/27.jpg" style="width:70px; height:70px; object-fit:contain;">
+                <div>
+                  <h6 class="mb-1 font-heading fs-6">Clarifying Scalp Detox Serum</h6>
+                  <div class="fw-bold text-forest small">$38.00</div>
+                  <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-5')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
+                <img src="assets/images/48.jpg" style="width:70px; height:70px; object-fit:contain;">
+                <div>
+                  <h6 class="mb-1 font-heading fs-6">Sulfate-Free Botanical Shine Drops</h6>
+                  <div class="fw-bold text-forest small">$35.00</div>
+                  <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-10')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
+                <img src="assets/images/14.jpg" style="width:70px; height:70px; object-fit:contain;">
+                <div>
+                  <h6 class="mb-1 font-heading fs-6">Botanical Silk Shampoo (Refill)</h6>
+                  <div class="fw-bold text-forest small">$34.00</div>
+                  <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-1')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
+                <img src="assets/images/15.jpg" style="width:70px; height:70px; object-fit:contain;">
+                <div>
+                  <h6 class="mb-1 font-heading fs-6">Nourishing Lipid Conditioner (Refill)</h6>
+                  <div class="fw-bold text-forest small">$36.00</div>
+                  <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-2')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. SUBSCRIPTION VIEW (PAGE 4) -->
+      <div class="dashboard-view" id="dashSubscription" style="display: none;">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <span class="badge-tag badge-forest text-white mb-2">ACTIVE SUBSCRIPTION</span>
+                  <h3 class="font-heading mb-0"><i class="bi bi-arrow-repeat text-forest me-2"></i> Active Ritual Box</h3>
+                </div>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-semibold">Auto-Ship Active</span>
+              </div>
+              <p class="text-muted small mb-4">Your <strong>Complete Routine Box</strong> is scheduled for automatic monthly dispatch directly from the FOLLICLE Botanical Lab.</p>
+              
+              <div class="p-3 bg-light rounded-3 mb-4 small">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <span class="text-muted d-block">Delivery Frequency</span>
+                    <strong class="text-dark fs-6">Every 30 Days (Monthly)</strong>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="text-muted d-block">Next Billing Date</span>
+                    <strong class="text-dark fs-6">November 1, 2026</strong>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="text-muted d-block">Subscriber Savings</span>
+                    <strong class="text-forest fs-6">25% Locked Discount</strong>
+                  </div>
+                  <div class="col-sm-6">
+                    <span class="text-muted d-block">Shipping Address</span>
+                    <strong class="text-dark">128 Lotus Way, Suite 4B</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 flex-wrap">
+                <button class="btn btn-follicle-primary btn-follicle-sm" onclick="showToast('Next box skipped to Dec 1.')">Skip Next Delivery</button>
+                <button class="btn btn-follicle-secondary btn-follicle-sm" onclick="showToast('Frequency options modal loaded.')">Change Frequency</button>
+                <a href="shop.html" class="btn btn-outline-secondary btn-follicle-sm">Swap Formulas</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="p-4 bg-white rounded-4 border shadow-sm">
+              <h5 class="font-heading mb-3"><i class="bi bi-shield-check text-forest me-2"></i> Subscriber Perks</h5>
+              <ul class="list-unstyled small d-flex flex-column gap-3 mb-0 text-muted">
+                <li class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-forest mt-1"></i>
+                  <span><strong>Complimentary Shipping:</strong> Free carbon-neutral shipping on every ritual box.</span>
+                </li>
+                <li class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-forest mt-1"></i>
+                  <span><strong>Early Access:</strong> Quarterly pre-release lab formulations.</span>
+                </li>
+                <li class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-forest mt-1"></i>
+                  <span><strong>Flexible Pause:</strong> Cancel or pause anytime with one click.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. SAVED MATRIX VIEW (PAGE 5) -->
+      <div class="dashboard-view" id="dashSaved" style="display: none;">
+        <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+              <span class="badge-tag badge-sage mb-2">PORTFOLIO MATRIX</span>
+              <h3 class="font-heading mb-1"><i class="bi bi-bookmark-heart text-forest me-2"></i> Saved Formulas Matrix</h3>
+              <p class="small text-muted mb-0">Formulas saved for side-by-side comparison, active ingredients review, and compatibility analysis.</p>
+            </div>
+            <a href="compare.html" class="btn btn-follicle-secondary btn-follicle-sm">Open Interactive Matrix &rarr;</a>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="p-3 rounded-3 bg-light border shine-hover h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img src="assets/images/14.jpg" style="width:52px; height:52px; object-fit:contain;" class="rounded-2">
                   <div>
-                    <span class="badge-tag badge-sage mb-1">Step 01 &bull; Cleanse</span>
+                    <span class="badge-tag badge-sage mb-1" style="font-size:0.68rem; padding:2px 6px;">SULFATE-FREE</span>
                     <h6 class="mb-0 fw-bold fs-7">Botanical Silk Shampoo</h6>
-                    <small class="text-muted">Use 2-3x per week</small>
+                    <small class="text-muted">FOLLICLE Science</small>
                   </div>
                 </div>
+                <div class="small text-muted mb-3">Rosemary Extract, Silk Amino Acids, Plant Squalane</div>
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                  <span class="fw-bold text-forest fs-6">$34.00</span>
+                  <button class="btn btn-follicle-primary btn-follicle-sm" onclick="addToCart('prod-1')">Add to Cart</button>
+                </div>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
-                  <img src="assets/images/15.jpg" style="width:54px; height:54px; object-fit:contain;" class="rounded-2">
+            <div class="col-md-4">
+              <div class="p-3 rounded-3 bg-light border shine-hover h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img src="assets/images/15.jpg" style="width:52px; height:52px; object-fit:contain;" class="rounded-2">
                   <div>
-                    <span class="badge-tag badge-butter mb-1">Step 02 &bull; Condition</span>
+                    <span class="badge-tag badge-butter mb-1" style="font-size:0.68rem; padding:2px 6px;">LIPID SEAL</span>
                     <h6 class="mb-0 fw-bold fs-7">Nourishing Lipid Conditioner</h6>
-                    <small class="text-muted">Apply mid-lengths to ends</small>
+                    <small class="text-muted">FOLLICLE Science</small>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
-                  <img src="assets/images/17.jpg" style="width:54px; height:54px; object-fit:contain;" class="rounded-2">
-                  <div>
-                    <span class="badge-tag badge-lilac mb-1">Step 03 &bull; Scalp Tonic</span>
-                    <h6 class="mb-0 fw-bold fs-7">Rosemary Scalp & Elixir Oil</h6>
-                    <small class="text-muted">Massage 60s nightly</small>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="p-3 rounded-3 bg-light border d-flex align-items-center gap-3 shine-hover">
-                  <img src="assets/images/38.jpg" style="width:54px; height:54px; object-fit:contain;" class="rounded-2">
-                  <div>
-                    <span class="badge-tag badge-peach mb-1">Step 04 &bull; Define</span>
-                    <h6 class="mb-0 fw-bold fs-7">Hydra-Shield Curl Leave-In</h6>
-                    <small class="text-muted">Scrunch into damp hair</small>
-                  </div>
+                <div class="small text-muted mb-3">Argan Oil, Shea Lipids, Hydrolyzed Wheat Protein</div>
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                  <span class="fw-bold text-forest fs-6">$36.00</span>
+                  <button class="btn btn-follicle-primary btn-follicle-sm" onclick="addToCart('prod-2')">Add to Cart</button>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Recommended Replenishments -->
-          <div class="p-4 bg-white rounded-4 border shadow-sm">
-            <h4 class="font-heading mb-3"><i class="bi bi-box-seam text-forest me-2"></i> Recommended Replenishments</h4>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
-                  <img src="assets/images/27.jpg" style="width:70px; height:70px; object-fit:contain;">
+            <div class="col-md-4">
+              <div class="p-3 rounded-3 bg-light border shine-hover h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <img src="assets/images/17.jpg" style="width:52px; height:52px; object-fit:contain;" class="rounded-2">
                   <div>
-                    <h6 class="mb-1 font-heading fs-6">Clarifying Scalp Detox Serum</h6>
-                    <div class="fw-bold text-forest small">$38.00</div>
-                    <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-5')">Add to Cart</button>
+                    <span class="badge-tag badge-lilac mb-1" style="font-size:0.68rem; padding:2px 6px;">SCALP TONIC</span>
+                    <h6 class="mb-0 fw-bold fs-7">Rosemary Scalp &amp; Elixir Oil</h6>
+                    <small class="text-muted">PurePhyto Co.</small>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="product-card border rounded-3 p-3 d-flex flex-row align-items-center gap-3 shine-hover">
-                  <img src="assets/images/48.jpg" style="width:70px; height:70px; object-fit:contain;">
-                  <div>
-                    <h6 class="mb-1 font-heading fs-6">Sulfate-Free Botanical Shine Drops</h6>
-                    <div class="fw-bold text-forest small">$35.00</div>
-                    <button class="btn btn-follicle-primary btn-follicle-sm mt-2" onclick="addToCart('prod-10')">Add to Cart</button>
-                  </div>
+                <div class="small text-muted mb-3">Rosemary Essential, Castor Seed, Biotin Active</div>
+                <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                  <span class="fw-bold text-forest fs-6">$42.00</span>
+                  <button class="btn btn-follicle-primary btn-follicle-sm" onclick="addToCart('prod-3')">Add to Cart</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Right Column: Subscription & Quick Shortcuts -->
-        <div class="col-lg-4">
-          
-          <!-- Subscription Status Box -->
-          <div class="p-4 bg-white rounded-4 border shadow-sm mb-4 shine-hover">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <h5 class="font-heading mb-0"><i class="bi bi-arrow-repeat text-forest me-2"></i> Active Ritual Box</h5>
-              <span class="badge-tag badge-forest text-white">Active</span>
-            </div>
-            <p class="small text-muted mb-3">Your <strong>Complete Routine Box</strong> is scheduled for monthly dispatch.</p>
-            <div class="p-3 bg-light rounded-3 mb-3 small">
-              <div><strong>Delivery Frequency:</strong> Monthly</div>
-              <div><strong>Next Billing Date:</strong> Nov 1, 2026</div>
-              <div><strong>Discount:</strong> 25% Subscriber Savings</div>
-            </div>
-            <div class="d-flex gap-2">
-              <a href="shop.html" class="btn btn-follicle-secondary btn-follicle-sm w-100">Explore Formulas</a>
-            </div>
-          </div>
-
-          <!-- Quick Navigation Shortcuts -->
-          <div class="p-4 bg-white rounded-4 border shadow-sm">
-            <h5 class="font-heading mb-3"><i class="bi bi-lightning text-forest me-2"></i> Studio Shortcuts</h5>
-            <div class="d-flex flex-column gap-2">
-              <a href="compare.html" class="btn btn-outline-secondary btn-follicle-sm text-start d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-arrow-left-right me-2"></i> Product Comparison Matrix</span>
-                <i class="bi bi-chevron-right small"></i>
-              </a>
-              <a href="hair-quiz.html" class="btn btn-outline-secondary btn-follicle-sm text-start d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-magic me-2"></i> Hair Diagnostic Quiz</span>
-                <i class="bi bi-chevron-right small"></i>
-              </a>
-              <a href="reviews.html" class="btn btn-outline-secondary btn-follicle-sm text-start d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-star me-2"></i> Submit Formula Review</span>
-                <i class="bi bi-chevron-right small"></i>
-              </a>
-              <a href="shop.html" class="btn btn-outline-secondary btn-follicle-sm text-start d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-bag me-2"></i> Browse All 15 Formulas</span>
-                <i class="bi bi-chevron-right small"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
       </div>
+
+      <!-- 6. QUICK ACTIONS VIEW (PAGE 6) -->
+      <div class="dashboard-view" id="dashShortcuts" style="display: none;">
+        <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+          <div class="mb-4">
+            <span class="badge-tag badge-peach mb-2">STUDIO NAVIGATION</span>
+            <h3 class="font-heading mb-1"><i class="bi bi-lightning text-forest me-2"></i> Studio Quick Actions</h3>
+            <p class="small text-muted mb-0">Jump directly to diagnostic tools, side-by-side matrices, verified reviews, or catalog formulas.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <a href="compare.html" class="p-4 rounded-4 bg-light border text-decoration-none d-flex align-items-center justify-content-between shine-hover h-100">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center text-forest fs-4" style="width: 52px; height: 52px;">
+                    <i class="bi bi-arrow-left-right"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-heading text-dark mb-1">Product Comparison Matrix</h5>
+                    <p class="text-muted small mb-0">Side-by-side active botanicals and sulfate-free formula comparison.</p>
+                  </div>
+                </div>
+                <i class="bi bi-arrow-right text-forest fs-5"></i>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="hair-quiz.html" class="p-4 rounded-4 bg-light border text-decoration-none d-flex align-items-center justify-content-between shine-hover h-100">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center text-forest fs-4" style="width: 52px; height: 52px;">
+                    <i class="bi bi-magic"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-heading text-dark mb-1">Hair Diagnostic Quiz</h5>
+                    <p class="text-muted small mb-0">Retake hair diagnostic to update curl pattern or scalp goals.</p>
+                  </div>
+                </div>
+                <i class="bi bi-arrow-right text-forest fs-5"></i>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="reviews.html" class="p-4 rounded-4 bg-light border text-decoration-none d-flex align-items-center justify-content-between shine-hover h-100">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center text-forest fs-4" style="width: 52px; height: 52px;">
+                    <i class="bi bi-star"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-heading text-dark mb-1">Submit Formula Review</h5>
+                    <p class="text-muted small mb-0">Leave verified feedback and earn $15 lab store credits.</p>
+                  </div>
+                </div>
+                <i class="bi bi-arrow-right text-forest fs-5"></i>
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <a href="shop.html" class="p-4 rounded-4 bg-light border text-decoration-none d-flex align-items-center justify-content-between shine-hover h-100">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center text-forest fs-4" style="width: 52px; height: 52px;">
+                    <i class="bi bi-bag"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-heading text-dark mb-1">Browse All Formulas</h5>
+                    <p class="text-muted small mb-0">Filter across all 15 clean bio-botanical hair care products.</p>
+                  </div>
+                </div>
+                <i class="bi bi-arrow-right text-forest fs-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

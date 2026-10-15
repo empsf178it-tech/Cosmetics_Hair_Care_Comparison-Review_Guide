@@ -876,6 +876,17 @@ function initProductCatalog() {
       if (sortSelect.value === 'name-az') filtered.sort((a,b) => a.name.localeCompare(b.name));
     }
 
+    // Update mobile filter count badge
+    const mobileFilterBadge = document.getElementById('mobileFilterCountBadge');
+    if (mobileFilterBadge) {
+      if (activeChips.length > 0) {
+        mobileFilterBadge.textContent = activeChips.length;
+        mobileFilterBadge.style.display = 'inline-block';
+      } else {
+        mobileFilterBadge.style.display = 'none';
+      }
+    }
+
     renderActiveFilterChips(activeChips);
     renderGrid(filtered);
   }
@@ -891,6 +902,39 @@ function initProductCatalog() {
     });
     if (sortSelect) sortSelect.value = 'featured';
     applyFilters();
+  }
+
+  // Mobile / Tablet Filter Drawer Setup
+  const filterToggleBtn = document.getElementById('shopFilterToggleBtn');
+  const filterCloseBtn = document.getElementById('shopFilterCloseBtn');
+  const filterDrawer = document.getElementById('shopFilterDrawer');
+  const filterBackdrop = document.getElementById('shopFilterBackdrop');
+
+  function openShopFilterDrawer() {
+    if (filterDrawer) filterDrawer.classList.add('open');
+    if (filterBackdrop) filterBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeShopFilterDrawer() {
+    if (filterDrawer) filterDrawer.classList.remove('open');
+    if (filterBackdrop) filterBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (filterToggleBtn) {
+    filterToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openShopFilterDrawer();
+    });
+  }
+
+  if (filterCloseBtn) {
+    filterCloseBtn.addEventListener('click', closeShopFilterDrawer);
+  }
+
+  if (filterBackdrop) {
+    filterBackdrop.addEventListener('click', closeShopFilterDrawer);
   }
 
   window.follicleApplyFilters = applyFilters;
@@ -1362,6 +1406,81 @@ function initDashboard() {
   const sub = JSON.parse(localStorage.getItem('follicle_active_subscription') || '{"plan":"None","status":"Inactive"}');
   const subEl = document.getElementById('dashSubStatus');
   if (subEl) subEl.textContent = `${sub.plan} (${sub.status})`;
+
+  // Tab-style Separate View Pages for Dashboard Content
+  const sidebarLinks = document.querySelectorAll('.sidebar-follicle .sidebar-menu-list .sidebar-link');
+  const views = document.querySelectorAll('.dashboard-view');
+
+  function switchDashboardView(targetHash) {
+    if (!targetHash) targetHash = '#dashOverview';
+    const targetView = document.querySelector(targetHash);
+    if (!targetView) return;
+
+    // Toggle active view visibility
+    views.forEach(v => {
+      v.style.display = 'none';
+      v.classList.remove('active');
+    });
+
+    targetView.style.display = 'block';
+    targetView.classList.add('active');
+
+    // Update sidebar active link state
+    sidebarLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === targetHash);
+    });
+
+    // Update URL hash
+    if (window.location.hash !== targetHash) {
+      if (history.pushState) {
+        history.pushState(null, null, targetHash);
+      } else {
+        window.location.hash = targetHash;
+      }
+    }
+
+    // Scroll smoothly to top of active view
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Close mobile sidebar if open
+    const sidebar = document.getElementById('sidebarFollicle');
+    if (sidebar && sidebar.classList.contains('open')) {
+      sidebar.classList.remove('open');
+    }
+  }
+
+  // Sidebar link clicks
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        switchDashboardView(href);
+      }
+    });
+  });
+
+  // Cross-view trigger buttons inside content cards (e.g. .dash-nav-trigger)
+  document.querySelectorAll('.dash-nav-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      const href = trigger.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        switchDashboardView(href);
+      }
+    });
+  });
+
+  // Handle browser back/forward buttons
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash && document.querySelector(window.location.hash)) {
+      switchDashboardView(window.location.hash);
+    }
+  });
+
+  // Initial load check from hash or default to overview
+  const initialHash = window.location.hash && document.querySelector(window.location.hash) ? window.location.hash : '#dashOverview';
+  switchDashboardView(initialHash);
 }
 
 /* ==========================================

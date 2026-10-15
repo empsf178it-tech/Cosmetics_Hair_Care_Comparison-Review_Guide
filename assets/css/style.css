@@ -441,6 +441,21 @@ footer .brand-dot,
   }
 }
 
+.dashboard-view {
+  animation: dashboardViewFadeIn 0.25s ease-out;
+}
+
+@keyframes dashboardViewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .sidebar-brand {
   display: flex;
   align-items: center;
@@ -2718,6 +2733,73 @@ a.fw-bold:hover i.bi-arrow-right {
     justify-content: flex-start;
   }
 
+  /* SHOP FILTERS DRAWER ON MOBILE & TABLET (< 992px) */
+  .shop-filters-col {
+    position: static;
+  }
+
+  .shop-filter-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(37, 41, 31, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .shop-filter-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .shop-filter-card {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 340px !important;
+    max-width: 88vw !important;
+    height: 100vh !important;
+    z-index: 1060 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(-105%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 10px 0 35px rgba(37, 41, 31, 0.18) !important;
+    border-radius: 0 20px 20px 0 !important;
+    margin: 0 !important;
+  }
+
+  .shop-filter-card.open {
+    transform: translateX(0) !important;
+  }
+
+  .shop-filter-header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 2;
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 1rem 1rem 0.75rem 1rem !important;
+  }
+
+  #shopFilterToggleBtn {
+    padding: 8px 14px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+  }
+
+  .shop-catalog-toolbar {
+    gap: 12px !important;
+  }
+
   /* HAIR QUIZ NAVIGATION BUTTONS CENTERING & EQUAL SIZING */
   .quiz-container {
     padding: 24px 18px !important;
@@ -2958,7 +3040,11 @@ a.fw-bold:hover i.bi-arrow-right {
   .hair-type-grid > .hair-type-card:last-child:nth-child(odd),
   #reviewsGrid > .col-md-6:last-child:nth-child(odd) {
     grid-column: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
+    justify-self: stretch !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
